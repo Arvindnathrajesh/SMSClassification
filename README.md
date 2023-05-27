@@ -29,7 +29,77 @@ This Application is built on NestJS framework
 => just hit the API at http://localhost:3000/sms/classify : POST menthod , with the required JSON body
 
 ```
-
+## Sample inputs and outputs
+1. i/p:
+```bash
+[
+    {
+        "time": "17-12-2021",
+        "sender": "MakeMyTrip",
+        "text": "Booking confirmation: Flight from Mumbai to Delhi on 18-12-21. Fare: Rs.3,000.00. Have a pleasant journey!"
+    },
+    {
+        "time": "17-12-2021",
+        "sender": "Swiggy",
+        "text": "Swiggy Order: Rs.400.00 is debited from your bank account. Enjoy your food!"
+    },
+    {
+        "time": "16-12-2021",
+        "sender": "Zomato",
+        "text": "Zomato Order #123456: Rs.500.00 is debited from your bank account. Enjoy your meal!"
+    },
+    {
+        "time": "17-12-2021",
+        "sender": "Paytm",
+        "text": "Payment of Rs.2,000.00 is received in your Paytm wallet from XYZ Friend on 17-12-21."
+    }
+]
+```
+o/p
+```bash 
+{
+    "summary": [
+        {
+            "category": "Travel",
+            "totalAmount": "3,000.00",
+            "smsArray": [
+                {
+                    "time": "17-12-2021",
+                    "sender": "MakeMyTrip",
+                    "text": "Booking confirmation: Flight from Mumbai to Delhi on 18-12-21. Fare: Rs.3,000.00. Have a pleasant journey!"
+                }
+            ]
+        },
+        {
+            "category": "Food",
+            "totalAmount": "900.00",
+            "smsArray": [
+                {
+                    "time": "17-12-2021",
+                    "sender": "Swiggy",
+                    "text": "Swiggy Order: Rs.400.00 is debited from your bank account. Enjoy your food!"
+                },
+                {
+                    "time": "16-12-2021",
+                    "sender": "Zomato",
+                    "text": "Zomato Order #123456: Rs.500.00 is debited from your bank account. Enjoy your meal!"
+                }
+            ]
+        },
+        {
+            "category": "Bill Payment",
+            "totalAmount": "2,000.00",
+            "smsArray": [
+                {
+                    "time": "17-12-2021",
+                    "sender": "Paytm",
+                    "text": "Payment of Rs.2,000.00 is received in your Paytm wallet from XYZ Friend on 17-12-21."
+                }
+            ]
+        }
+    ]
+}
+```
 
 ## Stay in touch
 - Author - [Arvind Nath Rajesh](https://arvindnathr@gmail.com)
