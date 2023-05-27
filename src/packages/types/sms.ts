@@ -16,13 +16,15 @@ export interface APIResponse {
 
 export enum SMS_KEYWORD {
   flight = 'flight',
+  train = 'train',
   railway = 'railway',
   food = 'food',
   payment = 'payment',
   swiggy = 'swiggy',
   zomato = 'zomato',
   bbpsbp = 'BBPSBP',
-  
+  purchase= 'purchase'
+
 }
 
 export enum SMS_CATEGORY {

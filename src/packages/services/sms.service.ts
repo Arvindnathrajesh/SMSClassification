@@ -14,10 +14,14 @@ export class SMSClassifierService {
   constructor() {
     this.rules = [
       { keyword: SMS_KEYWORD.flight, category: SMS_CATEGORY.travel },
+      { keyword: SMS_KEYWORD.railway, category: SMS_CATEGORY.travel },
+      { keyword: SMS_KEYWORD.train, category: SMS_CATEGORY.travel },
       { keyword: SMS_KEYWORD.food, category: SMS_CATEGORY.food },
       { keyword: SMS_KEYWORD.payment, category: SMS_CATEGORY.billPayment },
       { keyword: SMS_KEYWORD.swiggy, category: SMS_CATEGORY.food },
+      { keyword: SMS_KEYWORD.zomato, category: SMS_CATEGORY.food },
       { keyword: SMS_KEYWORD.bbpsbp, category: SMS_CATEGORY.billPayment },
+      { keyword: SMS_KEYWORD.purchase, category: SMS_CATEGORY.shopping },
       // Add more rules as needed
     ];
   }
@@ -62,7 +66,7 @@ export class SMSClassifierService {
   }
 
   private extractAmount(text: string): string | undefined {
-    const amountRegex = /Rs\.(\d+(?:\.\d{1,2})?)/i;
+    const amountRegex = /Rs\.(\d{1,3}(?:,\d{3})*(?:\.\d{1,2})?)/;
     const match = text.match(amountRegex);
 
     return match ? match[1] : undefined;
