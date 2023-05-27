@@ -85,6 +85,61 @@ o/p
 }
 ```
 
+2. i/p:
+```bash
+[
+    {
+        "time": "21-12-2021",
+        "sender": "GROCERY-STORE",
+        "text": "Rs.500.75 is the total amount of your purchase. Thank you for shopping with us!"
+    },
+    {
+        "time": "26-12-2021",
+        "sender": "ONLINE-SHOP",
+        "text": "Rs.800.50 is debited from your account for your recent online purchase. Thank you for shopping with us!"
+    },
+    {
+        "time": "25-12-2021",
+        "sender": "TRAVEL-AGENCY",
+        "text": "Rs.5,000.25 is the total fare for your upcoming flight. Have a pleasant journey!"
+    }
+]
+```
+o/p:
+```bash
+{
+    "summary": [
+        {
+            "category": "Shopping",
+            "totalAmount": "1301.25",
+            "smsArray": [
+                {
+                    "time": "21-12-2021",
+                    "sender": "GROCERY-STORE",
+                    "text": "Rs.500.75 is the total amount of your purchase. Thank you for shopping with us!"
+                },
+                {
+                    "time": "26-12-2021",
+                    "sender": "ONLINE-SHOP",
+                    "text": "Rs.800.50 is debited from your account for your recent online purchase. Thank you for shopping with us!"
+                }
+            ]
+        },
+        {
+            "category": "Travel",
+            "totalAmount": "5,000.25",
+            "smsArray": [
+                {
+                    "time": "25-12-2021",
+                    "sender": "TRAVEL-AGENCY",
+                    "text": "Rs.5,000.25 is the total fare for your upcoming flight. Have a pleasant journey!"
+                }
+            ]
+        }
+    ]
+}
+```
+
 ## Stay in touch
 - Author - [Arvind Nath Rajesh](https://arvindnathr@gmail.com)
 
