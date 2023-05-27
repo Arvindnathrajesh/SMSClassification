@@ -47,11 +47,6 @@ This Application is built on NestJS framework
         "time": "16-12-2021",
         "sender": "Zomato",
         "text": "Zomato Order #123456: Rs.500.00 is debited from your bank account. Enjoy your meal!"
-    },
-    {
-        "time": "17-12-2021",
-        "sender": "Paytm",
-        "text": "Payment of Rs.2,000.00 is received in your Paytm wallet from XYZ Friend on 17-12-21."
     }
 ]
 ```
@@ -83,17 +78,6 @@ o/p
                     "time": "16-12-2021",
                     "sender": "Zomato",
                     "text": "Zomato Order #123456: Rs.500.00 is debited from your bank account. Enjoy your meal!"
-                }
-            ]
-        },
-        {
-            "category": "Bill Payment",
-            "totalAmount": "2,000.00",
-            "smsArray": [
-                {
-                    "time": "17-12-2021",
-                    "sender": "Paytm",
-                    "text": "Payment of Rs.2,000.00 is received in your Paytm wallet from XYZ Friend on 17-12-21."
                 }
             ]
         }
